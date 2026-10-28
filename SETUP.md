@@ -16,7 +16,7 @@ content. To make content editable and persistent you must connect Supabase.
 ## 1\. Configure Supabase
 
 1. Create a project at [https://supabase.com](https://supabase.com).
-2. In **Project Settings → API**, copy the **Project URL** and the **anon / publishable** key. (https://dpikajgiydipjpctttrv.supabase.co) (sb\_publishable\_9Sd5mNojMmbT0-fMFy3TgA\_3I\_6zz-z)
+2. In **Project Settings → API**, copy the **Project URL** and the **anon / publishable** key. (https://YOUR-PROJECT-ref.supabase.co) (sb\_publishable\_9Sd5mNojMmbT0-fMFy3TgA\_3I\_6zz-z)
 3. Copy `.env.example` to `.env` and fill them in:
 
 ```bash
