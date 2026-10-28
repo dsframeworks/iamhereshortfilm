@@ -24,7 +24,7 @@ export const SITE_CONTENT: SiteContent = {
   trailerVideoUrl: mediaUrl('trailer/Trailer.mp4'),
   posterUrl: mediaUrl('poster.jpg'),
   posterFallbackUrl: mediaUrl('poster.jpg'),
-  youtubeUrl: '',
+  youtubeUrl: 'https://www.youtube.com/watch?v=SQe3UqAiS8M',
   trailerButtonText: 'Watch trailer on YouTube',
   discoverButtonText: 'Discover the film',
   filmButtonText: 'Watch Short Film on YouTube',
