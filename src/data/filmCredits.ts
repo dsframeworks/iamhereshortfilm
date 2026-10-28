@@ -58,7 +58,7 @@ export const filmCredits: FilmCredit[] = [
     role: 'Director of Photography',
     instagramId: '@jayesh_think',
     instagramUrl: 'https://www.instagram.com/jayesh_think/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Jayesh-Soni.jpg',
   },
   {
     type: 'Crew',
