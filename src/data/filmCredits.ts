@@ -43,7 +43,7 @@ export const filmCredits: FilmCredit[] = [
     aiGenerated: true,
     instagramId: '',
     instagramUrl: '',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Amaira.jpg',
   },
   {
     type: 'Crew',
