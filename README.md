@@ -1,73 +1,16 @@
-# React + TypeScript + Vite
+# I'M HERE — Official Short Film Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for **I'M HERE**, built with Vite, React, TypeScript, and Tailwind CSS. GitHub Actions builds and publishes the site to GitHub Pages.
 
-Currently, two official plugins are available:
+## Project map
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/content/siteContent.ts` — GitHub-managed text, film settings, trailer, and gallery references.
+- `public/media/` — poster, stills, and trailer files managed directly in Git.
+- `src/` — website components and the Supabase-authenticated admin sign-in.
+- `supabase/schema.sql` — the admin authorization allow-list policy.
 
-## React Compiler
+Edit `src/content/siteContent.ts` for text or settings. Add media under `public/media/`, use `mediaUrl(...)` in the content file, then commit and push to `main`. The Pages workflow rebuilds and deploys automatically.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Supabase is used only for admin authentication and the protected `admins` allow-list. The browser does not publish content to GitHub. Direct in-dashboard publishing would require a trusted server-side GitHub App or function; no GitHub credential belongs in frontend code.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+See [SETUP.md](SETUP.md) for local development and admin setup.

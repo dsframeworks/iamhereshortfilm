@@ -32,7 +32,7 @@ function useSeo(title: string, description: string, image: string) {
 }
 
 export default function Home() {
-  const { content } = useContent('published')
+  const { content } = useContent()
   useSeo(content.pageTitle, content.seoDescription, content.socialImageUrl)
 
   return (

@@ -5,12 +5,10 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js'
  *
  * Reads configuration from environment variables:
  *   VITE_SUPABASE_URL
- *   VITE_SUPABASE_ANON_KEY   (the publishable / anon key — safe for the browser
- *                             ONLY because every table is protected by RLS)
+ *   VITE_SUPABASE_ANON_KEY   (the publishable / anon key for browser auth)
  *
- * The app is designed to run WITHOUT Supabase configured: in that case the
- * public website renders the built-in fallback content and the admin panel
- * shows a friendly "not configured" message. No fake/hardcoded auth is used.
+ * Supabase is used only for admin authentication and the server-managed
+ * admins allow-list. Public site content and media come from the repository.
  */
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
@@ -29,6 +27,3 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
       },
     })
   : null
-
-/** Name of the Supabase Storage bucket used for all media. */
-export const MEDIA_BUCKET = 'media'
