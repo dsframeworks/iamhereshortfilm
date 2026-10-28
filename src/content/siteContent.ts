@@ -38,7 +38,7 @@ export const SITE_CONTENT: SiteContent = {
   countdownTimezoneLabel: 'IST (India Standard Time)',
 
   tech: {
-    runtime: 'To be announced',
+    runtime: '12:37',
     language: 'To be announced',
     resolution: 'To be announced',
     aspectRatio: 'To be announced',
