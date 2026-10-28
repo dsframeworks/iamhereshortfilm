@@ -25,7 +25,7 @@ export const filmCredits: FilmCredit[] = [
     character: 'Reyansh',
     instagramId: '@fusiononinsta',
     instagramUrl: 'https://www.instagram.com/fusiononinsta/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Dhruv-Sharma.jpg',
   },
   {
     type: 'Cast',
@@ -41,7 +41,7 @@ export const filmCredits: FilmCredit[] = [
     role: 'Writter & Director',
     instagramId: '@fusiononinsta',
     instagramUrl: 'https://www.instagram.com/fusiononinsta/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Dhruv-Sharma.jpg',
   },
   {
     type: 'Crew',
