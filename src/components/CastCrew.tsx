@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Instagram, UserRound } from 'lucide-react'
+import { Instagram, Sparkles, UserRound } from 'lucide-react'
 import type { FilmCredit } from '../data/filmCredits'
 import { filmCredits } from '../data/filmCredits'
 import Section from './Section'
@@ -29,6 +29,8 @@ function CreditCard({ credit }: { credit: FilmCredit }) {
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = credit.imageUrl.trim()
   const profileUrl = instagramProfileUrl(credit.instagramUrl)
+  const isAiGeneratedCast = credit.type === 'Cast' && credit.aiGenerated === true
+  const displayName = credit.name
 
   return (
     <article className="group">
@@ -36,20 +38,20 @@ function CreditCard({ credit }: { credit: FilmCredit }) {
         {imageUrl && !imageFailed ? (
           <img
             src={imageUrl}
-            alt={credit.name}
+            alt={displayName || 'Credit portrait'}
             loading="lazy"
             onError={() => setImageFailed(true)}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-paper to-offwhite text-muted" aria-hidden="true">
-            <UserRound size={42} strokeWidth={1} />
+            {isAiGeneratedCast ? <Sparkles size={42} strokeWidth={1} /> : <UserRound size={42} strokeWidth={1} />}
           </div>
         )}
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-ink">{credit.name}</h3>
+      <h3 className="mt-4 text-lg font-semibold text-ink">{displayName}</h3>
       {credit.type === 'Cast' ? (
-        <p className="text-sm text-muted">as {credit.character}</p>
+        <p className={`text-sm ${isAiGeneratedCast ? 'text-red' : 'text-muted'}`}>as {credit.character}</p>
       ) : (
         <p className="text-sm text-red">{credit.role}</p>
       )}

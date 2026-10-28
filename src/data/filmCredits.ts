@@ -2,6 +2,7 @@ export type CastCredit = {
   type: 'Cast'
   name: string
   character: string
+  aiGenerated?: boolean
   instagramId: string
   instagramUrl: string
   imageUrl: string
@@ -33,6 +34,15 @@ export const filmCredits: FilmCredit[] = [
     character: 'ASL Teacher',
     instagramId: '@lawanxx_',
     instagramUrl: 'https://www.instagram.com/lawanxx_/',
+    imageUrl: '',
+  },
+  {
+    type: 'Cast',
+    name: 'Fiction (AI made)',
+    character: 'Amaira',
+    aiGenerated: true,
+    instagramId: '',
+    instagramUrl: '',
     imageUrl: '',
   },
   {
