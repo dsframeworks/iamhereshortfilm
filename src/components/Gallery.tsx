@@ -1,12 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { SiteContent } from '../lib/content'
 import Section from './Section'
-import { X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 export default function Gallery({ content }: { content: SiteContent }) {
   const [active, setActive] = useState<number | null>(null)
   const items = content.gallery
+
+  useEffect(() => {
+    if (active === null) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault()
+        setActive((current) => current === null ? null : (current - 1 + items.length) % items.length)
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault()
+        setActive((current) => current === null ? null : (current + 1) % items.length)
+      } else if (event.key === 'Escape') {
+        setActive(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [active, items.length])
+
   if (items.length === 0) return null
+
+  const showPrevious = () => setActive((current) => current === null ? null : (current - 1 + items.length) % items.length)
+  const showNext = () => setActive((current) => current === null ? null : (current + 1) % items.length)
 
   return (
     <Section id="gallery" eyebrow="Imagery" title="Film stills & behind the scenes">
@@ -42,12 +65,36 @@ export default function Gallery({ content }: { content: SiteContent }) {
           >
             <X size={28} />
           </button>
-          <figure className="max-h-[90vh] max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <img src={items[active].url} alt={items[active].alt || ''} className="max-h-[80vh] w-auto rounded-sm" />
-            {items[active].caption && (
-              <figcaption className="mt-3 text-center text-sm text-white/80">{items[active].caption}</figcaption>
-            )}
-          </figure>
+          <div className="flex w-full items-center justify-center gap-2 sm:gap-6" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white/90 transition hover:bg-white/20 hover:text-white sm:h-12 sm:w-12"
+              onClick={showPrevious}
+              aria-label="Previous still"
+              title="Previous still"
+            >
+              <ChevronLeft size={26} />
+            </button>
+            <figure className="max-h-[90vh] min-w-0 max-w-5xl">
+              <img
+                src={items[active].url}
+                alt={items[active].alt || ''}
+                className="mx-auto max-h-[80vh] max-w-[calc(100vw-7rem)] w-auto rounded-sm object-contain sm:max-w-[72vw] lg:max-w-5xl"
+              />
+              {items[active].caption && (
+                <figcaption className="mt-3 text-center text-sm text-white/80">{items[active].caption}</figcaption>
+              )}
+            </figure>
+            <button
+              type="button"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white/90 transition hover:bg-white/20 hover:text-white sm:h-12 sm:w-12"
+              onClick={showNext}
+              aria-label="Next still"
+              title="Next still"
+            >
+              <ChevronRight size={26} />
+            </button>
+          </div>
         </div>
       )}
     </Section>
