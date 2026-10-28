@@ -51,7 +51,7 @@ function CreditCard({ credit }: { credit: FilmCredit }) {
       </div>
       <h3 className="mt-4 text-lg font-semibold text-ink">{displayName}</h3>
       {credit.type === 'Cast' ? (
-        <p className={`text-sm ${isAiGeneratedCast ? 'text-red' : 'text-muted'}`}>as {credit.character}</p>
+        <p className="text-sm text-muted">as {credit.character}</p>
       ) : (
         <p className="text-sm text-red">{credit.role}</p>
       )}
