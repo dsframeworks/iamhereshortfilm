@@ -51,7 +51,6 @@ export const SITE_CONTENT: SiteContent = {
     postProduction: 'Dhruv SHarma',
   },
 
-  castCrew: [],
   gallery: [
     'Screenshot 2026-10-28 110413.png',
     'Screenshot 2026-10-28 110437.png',

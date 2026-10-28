@@ -25,6 +25,7 @@ There is no public sign-up. The browser uses only Supabase Auth and reads the si
 ## Edit site content and media
 
 - Text and settings live in [`src/content/siteContent.ts`](src/content/siteContent.ts).
+- Cast and Crew names, roles, Instagram profiles, and image URLs live in `src/data/filmCredits.ts`.
 - Existing stills live in `public/media/stills/`; the trailer lives in `public/media/trailer/`.
 - Add or replace media manually in GitHub. Keep filenames unique and build asset URLs with `mediaUrl('stills/filename.png')` or `mediaUrl('trailer/filename.mp4')`; this includes the GitHub Pages repository base path.
 - Commit and push changes to `main`. GitHub Actions builds the Vite site and deploys its `dist` output to GitHub Pages.

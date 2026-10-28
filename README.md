@@ -5,6 +5,7 @@ The official website for **I'M HERE**, built with Vite, React, TypeScript, and T
 ## Project map
 
 - `src/content/siteContent.ts` — GitHub-managed text, film settings, trailer, and gallery references.
+- `src/data/filmCredits.ts` — typed Cast and Crew credits, Instagram details, and optional image URLs.
 - `public/media/` — poster, stills, and trailer files managed directly in Git.
 - `src/` — website components and the Supabase-authenticated admin sign-in.
 - `supabase/schema.sql` — the admin authorization allow-list policy.

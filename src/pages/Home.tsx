@@ -41,7 +41,7 @@ export default function Home() {
       <Synopsis content={content} />
       <FilmDetails content={content} />
       <TechSpecs content={content} />
-      <CastCrew content={content} />
+      <CastCrew />
       <Gallery content={content} />
       <PosterSection content={content} />
       <Footer content={content} />
