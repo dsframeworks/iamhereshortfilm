@@ -12,8 +12,8 @@ export const SITE_CONTENT: SiteContent = {
   synopsis:
     "I'M HERE is a short film about presence — about the quiet, aching need to be seen and to matter to someone. Told through intimate, unhurried images, it follows a single soul searching for connection in an indifferent world, and the small, luminous moment in which that connection is finally found.",
   genre: 'Drama · Short Film',
-  language: 'To be announced',
-  runtime: 'To be announced',
+  language: 'English',
+  runtime: '12:37',
   releaseDate: '19 November 2026',
   releaseMessage: "I'M HERE is now streaming.",
   pageTitle: "I'M HERE — Official Short Film",
