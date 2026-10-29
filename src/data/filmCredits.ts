@@ -60,7 +60,7 @@ export const filmCredits: FilmCredit[] = [
     role: 'Aditya Rajput',
     instagramId: '@btw.adityya',
     instagramUrl: 'https://www.instagram.com/btw.adityya/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Aditya-Rajput.jpg',
   },
   {
     type: 'Crew',
@@ -76,6 +76,6 @@ export const filmCredits: FilmCredit[] = [
     role: 'Art Director',
     instagramId: '@btw.adityya',
     instagramUrl: 'https://www.instagram.com/btw.adityya/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Aditya-Rajput.jpg',
   },
 ]
