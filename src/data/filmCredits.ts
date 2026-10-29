@@ -34,7 +34,7 @@ export const filmCredits: FilmCredit[] = [
     character: 'ASL Teacher',
     instagramId: '@lawanxx_',
     instagramUrl: 'https://www.instagram.com/lawanxx_/',
-    imageUrl: '',
+    imageUrl: 'https://raw.githubusercontent.com/dsframeworks/iamhereshortfilm/main/public/media/Anshika.jpg',
   },
   {
     type: 'Cast',
